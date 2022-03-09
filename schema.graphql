@@ -1,5 +1,9 @@
-type ExampleEntity @entity {
+type AssetPool @entity {
   id: ID!
-  count: BigInt!
-  assetPool: Bytes! # address
+  address: Bytes! # address
+}
+
+type Factory @entity {
+  id: ID!
+  poolCount: Int! # Number of pools
 }

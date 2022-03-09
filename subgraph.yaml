@@ -1,4 +1,4 @@
-specVersion: 0.0.1
+specVersion: 0.0.2
 schema:
   file: ./schema.graphql
 dataSources:
@@ -6,14 +6,14 @@ dataSources:
     name: AssetPoolFactory
     network: matic
     source:
-      address: "0x453d68Ae3E8434fB2818F62C0cABc3267A205bc8"
+      address: "0xb3B2b0fc5ce12aE58EEb13E19547Eb2Dd61A79D5"
       abi: AssetPoolFactory
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
       language: wasm/assemblyscript
       entities:
-        - AssetPoolDeployed
+        - Factory
       abis:
         - name: AssetPoolFactory
           file: ./abis/AssetPoolFactory.json
