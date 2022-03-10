@@ -20,4 +20,23 @@ dataSources:
       eventHandlers:
         - event: AssetPoolDeployed(address)
           handler: handleAssetPoolDeployed
-      file: ./src/mapping.ts
+      file: ./src/mappings/AssetPoolFactory.ts
+templates:
+  - name: AssetPool
+    kind: ethereum/contract
+    network: matic
+    source:
+      abi: IDefaultDiamond
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      file: ./src/mappings/AssetPool.ts
+      entities:
+        - AssetPool
+      abis:
+        - name: IDefaultDiamond
+          file: ./abis/AssetPool/IDefaultDiamond.json
+      eventHandlers:
+        - event: RegistryUpdated(address,address)
+          handler: handleRegistryUpdated

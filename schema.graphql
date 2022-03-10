@@ -1,6 +1,7 @@
 type AssetPool @entity {
   id: ID!
   address: Bytes! # address
+  registry: Bytes! # address
 }
 
 type Factory @entity {
